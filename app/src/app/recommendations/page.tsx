@@ -22,7 +22,7 @@ export default function RecommendationsPage() {
           <label className="flex flex-col gap-1">
             <span className="text-sm">Age band</span>
             <select className="rounded-md border border-slate-300 p-2"
-              value={inputs.ageBand ?? ''} onChange={(e) => setInputs({ ...inputs, ageBand: e.target.value as any })}>
+              value={inputs.ageBand ?? ''} onChange={(e) => setInputs({ ...inputs, ageBand: e.target.value as '3-6' | '7-11' | '12-16' | undefined })}>
               <option value="">Select</option>
               <option value="3-6">3–6</option>
               <option value="7-11">7–11</option>
@@ -33,7 +33,7 @@ export default function RecommendationsPage() {
           <label className="flex flex-col gap-1">
             <span className="text-sm">Main challenge</span>
             <select className="rounded-md border border-slate-300 p-2"
-              value={inputs.challenge ?? ''} onChange={(e) => setInputs({ ...inputs, challenge: e.target.value as any })}>
+              value={inputs.challenge ?? ''} onChange={(e) => setInputs({ ...inputs, challenge: e.target.value as 'morningTransitions' | 'homeworkRefusal' | 'publicMeltdowns' | 'bedtimeAnxiety' | 'earlySigns' | undefined })}>
               <option value="">Select</option>
               <option value="morningTransitions">Morning transitions</option>
               <option value="homeworkRefusal">Homework refusal</option>
@@ -46,7 +46,7 @@ export default function RecommendationsPage() {
           <label className="flex flex-col gap-1">
             <span className="text-sm">Confidence today</span>
             <select className="rounded-md border border-slate-300 p-2"
-              value={inputs.confidence ?? ''} onChange={(e) => setInputs({ ...inputs, confidence: Number(e.target.value) as any })}>
+              value={inputs.confidence ?? ''} onChange={(e) => setInputs({ ...inputs, confidence: Number(e.target.value) as 1 | 2 | 3 | undefined })}>
               <option value="">Select</option>
               <option value="1">1 (low)</option>
               <option value="2">2</option>
@@ -57,7 +57,7 @@ export default function RecommendationsPage() {
           <label className="flex flex-col gap-1">
             <span className="text-sm">Trigger (optional)</span>
             <select className="rounded-md border border-slate-300 p-2"
-              value={inputs.trigger ?? ''} onChange={(e) => setInputs({ ...inputs, trigger: e.target.value as any })}>
+              value={inputs.trigger ?? ''} onChange={(e) => setInputs({ ...inputs, trigger: e.target.value as 'noise' | 'lights' | 'crowd' | 'none' | undefined })}>
               <option value="">None</option>
               <option value="noise">Noise</option>
               <option value="lights">Lights</option>
@@ -68,7 +68,7 @@ export default function RecommendationsPage() {
           <label className="flex flex-col gap-1">
             <span className="text-sm">What helps you?</span>
             <select className="rounded-md border border-slate-300 p-2"
-              value={inputs.parentPrefers ?? ''} onChange={(e) => setInputs({ ...inputs, parentPrefers: e.target.value as any })}>
+              value={inputs.parentPrefers ?? ''} onChange={(e) => setInputs({ ...inputs, parentPrefers: e.target.value as 'visuals' | 'text' | 'audio' | 'none' | undefined })}>
               <option value="">No preference</option>
               <option value="visuals">Visuals</option>
               <option value="text">Text</option>
